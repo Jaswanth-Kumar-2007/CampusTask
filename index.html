@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusTask — Student To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="eyebrow">For college students</p>
+        <h1>CampusTask</h1>
+        <p class="subtitle">
+          Keep assignments, study sessions, and personal tasks in one simple
+          dashboard.
+        </p>
+      </header>
+
+      <section class="stats" aria-live="polite">
+        <article class="stat-card">
+          <span class="stat-label">Total tasks</span>
+          <strong id="total-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Completed</span>
+          <strong id="completed-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <span class="stat-label">Pending</span>
+          <strong id="pending-count">0</strong>
+        </article>
+      </section>
+
+      <section class="card add-card">
+        <h2>Add a task</h2>
+        <form id="task-form" novalidate>
+          <div class="field">
+            <label for="task-title">Title</label>
+            <input
+              id="task-title"
+              name="title"
+              type="text"
+              maxlength="80"
+              placeholder="e.g. Finish biology lab report"
+              autocomplete="off"
+            />
+            <p id="title-error" class="error" hidden></p>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="task-category">Category</label>
+              <select id="task-category" name="category">
+                <option value="Assignment">Assignment</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="task-due">Due date</label>
+              <input id="task-due" name="dueDate" type="date" />
+              <p id="date-error" class="error" hidden></p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Add task</button>
+        </form>
+      </section>
+
+      <section class="card list-card">
+        <div class="list-header">
+          <h2>Your tasks</h2>
+          <div class="filters" role="tablist" aria-label="Filter tasks">
+            <button type="button" class="filter-btn is-active" data-filter="all">
+              All
+            </button>
+            <button type="button" class="filter-btn" data-filter="pending">
+              Pending
+            </button>
+            <button type="button" class="filter-btn" data-filter="completed">
+              Completed
+            </button>
+          </div>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon" aria-hidden="true">✓</div>
+          <h3>No tasks yet</h3>
+          <p>Add your first assignment, study session, or personal reminder.</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
