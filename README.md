@@ -35,7 +35,7 @@ You only need a modern web browser. No backend, database, or additional dependen
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/CampusTask.git
+   git clone https://github.com/Jaswanth-Kumar-2007/CampusTask.git
    ```
 
 2. Navigate to the project directory:
